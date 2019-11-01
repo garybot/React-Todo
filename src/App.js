@@ -2,6 +2,7 @@ import React from 'react';
 
 import TodoList from './components/TodoComponents/TodoList.js';
 import TodoForm from './components/TodoComponents/TodoForm.js';
+import SearchForm from './components/TodoComponents/SearchForm.js';
 
 class App extends React.Component {
   constructor() {
@@ -19,10 +20,14 @@ class App extends React.Component {
           completed: false
         }
       ], 
-      formData: ""
+      formData: "",
+      searchData: ""
     };
   }
 
+  handleSearchChange = evt => {
+    this.setState({searchData: evt.target.value});
+  }
   handleFormChange = evt => {
     this.setState({formData: evt.target.value});
   }
@@ -59,8 +64,10 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
+        <SearchForm handleChange={this.handleSearchChange}/>
         <TodoList 
-          data={this.state.data} 
+          data={this.state.data}
+          searchData={this.state.searchData} 
           toggleComplete={this.toggleComplete} 
         />
         <TodoForm 
