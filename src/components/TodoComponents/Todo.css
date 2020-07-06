@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+.app {
+  width: 350px;
+  margin: 0 auto;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+.todo-item {
+  margin: 0 auto;
+  padding: 1%;
+  list-style: none;
+  width: 100%;
+  font-size: 1.4em
+}
+.todo-item:nth-child(odd) {
+  background-color:  #6699cc;
+}
+.todo-item:nth-child(even) {
+  background-color: slategray;
+}
+.todo-form {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+  /*background-color: slategray;*/
+
+  /*background-color: #1b3752;*/
